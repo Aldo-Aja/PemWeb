@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Memasukan Bilangan</title>
+</head>
+<body>
+    <p>
+        <script language="JavaScript">
+            function calculate() {
+                var bil1 = parseFloat(document.fform.bilangan1.value);
+                if (isNaN(bil1)) bil1 = 0.0;
+
+                var bil2 = parseFloat(document.fform.bilangan2.value);
+                if (isNaN(bil2)) bil2 = 0.0;
+
+                var operasi = document.fform.operasi.value;
+
+                var hasil;
+                switch (operasi) {
+                    case "tambah":
+                        hasil = bil1 + bil2;
+                        alert("Hasil Penjumlahan = " + hasil);
+                        break;
+                    case "kurang":
+                        hasil = bil1 - bil2;
+                        alert("Hasil Pengurangan = " + hasil);
+                        break;
+                    case "kali":
+                        hasil = bil1 * bil2;
+                        alert("Hasil Perkalian = " + hasil);
+                        break;
+                    case "bagi":
+                        hasil = bil1 / bil2;
+                        alert("Hasil Pembagian = " + hasil);
+                        break;
+                    default:
+                        alert("Invalid operasi.");
+                        break;
+                }
+            }
+        </script>
+    </p>
+    <form name="fform">
+        <h1><br>Memasukan Data Lewat Keyboard</h1>
+        <pre>
+            Bilangan Pertama : <input type="text" size="11" name="bilangan1"><br>
+            Bilangan Kedua   : <input type="text" size="11" name="bilangan2">
+        </pre>
+        <pre>
+            Operasi:
+            <select name="operasi">
+                <option value="tambah">Penjumlahan</option>
+                <option value="kurang">Pengurangan</option>
+                <option value="kali">Perkalian</option>
+                <option value="bagi">Pembagian</option>
+            </select>
+        </pre>
+        <p>
+            <input type="button" value="Hasil" onclick="calculate()">
+            <input type="reset" value="Ulang">
+        </p>
+    </form>
+</body>
+</html>
